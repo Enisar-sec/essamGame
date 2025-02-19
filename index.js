@@ -30,11 +30,14 @@ function nextsequence(){
  $("h1").text("Level "+level);
 }
 
-$("body").keypress(function (){
+
+$("body").on('touchstart keypress', function(){
     if (level === 0 ) {
         nextsequence();
     }
-})
+});
+
+
 
 function checkAnswer(currentLevel){
     if (gamePattern[gamePattern.length - 1] === buttonColors[currentLevel] && gamePattern.toString() === userPattern.toString() ){
